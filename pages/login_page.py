@@ -6,8 +6,8 @@ class LoginPage(BasePage):
     PASSWORD = (By.ID, "password")
     LOGIN_BUTTON = (By.ID, "login-button")
 
-    def load(self) :
-        self.open("https://www.saucedemo.com/")
+    def load(self, base_url: str) :
+        self.open(base_url)
 
     def login(self, username: str, password: str):
         self.type(self.USERNAME, username)

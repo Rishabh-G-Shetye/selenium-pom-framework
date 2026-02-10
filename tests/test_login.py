@@ -1,7 +1,6 @@
 from pages.login_page import LoginPage
 
-def test_login(driver):
+def test_login(driver, base_url, credentials):
     login = LoginPage(driver)
-
-    login.load()
-    login.login("standard_user", "secret_sauce")
+    login.load(base_url)
+    login.login(credentials["username"], credentials["password"])
